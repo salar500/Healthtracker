@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- ========== META DATA ========== -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HealthTracker — Simple, Private Health Calculators</title>
+  <meta name="description" content="HealthTracker provides fast, accurate, and privacy-first health calculators — including BMI, hydration, sleep, and more — designed for everyday wellness." />
+  <meta name="keywords" content="HealthTracker, health calculators, BMI, hydration, sleep, fitness tools, wellness apps" />
+  <meta name="author" content="HealthTracker Team" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="HealthTracker — Simple, Private Health Calculators" />
+  <meta property="og:description" content="Accurate and privacy-friendly health calculators — BMI, hydration, sleep, and more. No tracking. No ads. Just clarity." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yourdomain.com" />
+  <meta property="og:image" content="https://yourdomain.com/assets/preview.jpg" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+
+  <!-- Tailwind + Font -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+  </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
+
+  <!-- Header -->
+  <header class="bg-white/90 backdrop-blur border-b sticky top-0 z-50 shadow-sm">
+    <div class="max-w-6xl mx-auto flex justify-between items-center px-4 py-3 md:py-4">
+      <a href="/index.html" class="flex items-center space-x-2">
+        <img src="/assets/logo.svg" alt="HealthTracker Logo" class="h-8 w-8">
+        <span class="text-xl font-semibold text-emerald-600 hover:text-emerald-700">HealthTracker</span>
+      </a>
+      <nav class="hidden md:flex space-x-8 text-sm font-medium text-gray-600">
+        <a href="/index.html" class="text-emerald-600 font-semibold">Home</a>
+        <a href="/bmi.html" class="hover:text-emerald-600">BMI</a>
+        <a href="/about.html" class="hover:text-emerald-600">About</a>
+        <a href="/privacy.html" class="hover:text-emerald-600">Privacy</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========== HERO SECTION ========== -->
+  <section class="flex flex-col items-center justify-center text-center px-6 py-20 md:py-28 bg-gradient-to-b from-emerald-50 to-white">
+    <h1 class="text-4xl md:text-5xl font-bold text-emerald-600 mb-4">Your Health, Simplified.</h1>
+    <p class="text-gray-600 text-lg max-w-2xl mb-8">
+      HealthTracker gives you easy, accurate tools to understand your body — from BMI and hydration to sleep and calories.
+      All private. All free.
+    </p>
+    <a href="/bmi.html" class="bg-emerald-500 text-white font-semibold px-8 py-3 rounded-lg hover:bg-emerald-600 transition shadow">
+      Try BMI Calculator
+    </a>
+  </section>
+
+  <!-- ========== FEATURE GRID ========== -->
+  <section class="max-w-6xl mx-auto px-6 py-16 md:py-20">
+    <h2 class="text-2xl md:text-3xl font-semibold text-center text-gray-800 mb-12">Our Health Tools</h2>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- BMI -->
+      <div class="bg-white rounded-2xl shadow p-8 hover:shadow-lg transition text-center">
+        <div class="mx-auto mb-4 bg-emerald-100 text-emerald-600 rounded-full w-12 h-12 flex items-center justify-center font-bold text-lg">BMI</div>
+        <h3 class="text-xl font-semibold mb-2">BMI Calculator</h3>
+        <p class="text-gray-600 text-sm mb-4">Check your Body Mass Index instantly and see your health range.</p>
+        <a href="/bmi.html" class="text-emerald-600 hover:underline font-medium">Open Calculator →</a>
+      </div>
+
+      <!-- Hydration -->
+      <div class="bg-white rounded-2xl shadow p-8 hover:shadow-lg transition text-center">
+        <div class="mx-auto mb-4 bg-emerald-100 text-emerald-600 rounded-full w-12 h-12 flex items-center justify-center font-bold text-lg">💧</div>
+        <h3 class="text-xl font-semibold mb-2">Hydration Calculator</h3>
+        <p class="text-gray-600 text-sm mb-4">Find out how much water your body needs each day to stay balanced.</p>
+        <a href="/hydration.html" class="text-emerald-600 hover:underline font-medium">Coming Soon →</a>
+      </div>
+
+      <!-- Sleep -->
+      <div class="bg-white rounded-2xl shadow p-8 hover:shadow-lg transition text-center">
+        <div class="mx-auto mb-4 bg-emerald-100 text-emerald-600 rounded-full w-12 h-12 flex items-center justify-center font-bold text-lg">😴</div>
+        <h3 class="text-xl font-semibold mb-2">Sleep Calculator</h3>
+        <p class="text-gray-600 text-sm mb-4">Discover your optimal sleep and wake-up times based on sleep cycles.</p>
+        <a href="/sleep.html" class="text-emerald-600 hover:underline font-medium">Coming Soon →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TRUST SECTION ========== -->
+  <section class="bg-emerald-50 py-16 text-center px-6">
+    <h2 class="text-2xl md:text-3xl font-semibold text-emerald-700 mb-4">Built with Privacy First</h2>
+    <p class="text-gray-600 max-w-2xl mx-auto">
+      No accounts, no tracking, no cookies.  
+      Every HealthTracker tool runs locally in your browser — because your health data should always stay yours.
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t py-6 text-center text-sm text-gray-500">
+    <p>© 2025 HealthTracker. All rights reserved.</p>
+    <p class="mt-1 text-xs text-gray-400">Health tools designed by experts, inspired by simplicity.</p>
+  </footer>
+
+</body>
+</html>
