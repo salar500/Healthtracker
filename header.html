@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- ========== META DATA ========== -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="HealthTracker — simple, privacy-friendly health and fitness calculators including BMI, hydration, sleep, and more. No login, no tracking, just useful tools." />
+  <meta name="keywords" content="BMI calculator, health tracker, fitness tools, hydration calculator, sleep calculator, body mass index" />
+  <meta name="author" content="HealthTracker Team" />
+
+  <!-- Open Graph for Social Sharing -->
+  <meta property="og:title" content="HealthTracker — Simple Health Calculators" />
+  <meta property="og:description" content="Track your health easily with fast, privacy-friendly tools — BMI, sleep, hydration, and more." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yourdomain.com" />
+  <meta property="og:image" content="https://yourdomain.com/assets/preview.jpg" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+
+  <!-- Title -->
+  <title>HealthTracker</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom Fonts (optional for polished feel) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
+
+  <!-- ========== HEADER ========== -->
+  <header class="bg-white/90 backdrop-blur-md border-b sticky top-0 z-50 shadow-sm transition-all">
+    <div class="max-w-6xl mx-auto flex items-center justify-between px-4 py-3 md:py-4">
+      
+      <!-- Logo -->
+      <a href="/index.html" class="flex items-center space-x-2">
+        <img src="/assets/logo.svg" alt="HealthTracker Logo" class="h-8 w-8">
+        <span class="text-xl font-semibold text-emerald-600 tracking-tight hover:text-emerald-700 transition-colors">
+          HealthTracker
+        </span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex space-x-8 text-sm font-medium text-gray-600">
+        <a href="/index.html" class="hover:text-emerald-600 transition">Home</a>
+        <a href="/about.html" class="hover:text-emerald-600 transition">About</a>
+        <a href="/privacy.html" class="hover:text-emerald-600 transition">Privacy</a>
+        <a href="/contact.html" class="hover:text-emerald-600 transition">Contact</a>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <button id="menu-toggle" class="md:hidden focus:outline-none text-gray-600 hover:text-emerald-600 transition" aria-label="Toggle menu">
+        <!-- hamburger icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t text-gray-700">
+      <nav class="flex flex-col px-4 py-2 space-y-2">
+        <a href="/index.html" class="hover:text-emerald-600">Home</a>
+        <a href="/about.html" class="hover:text-emerald-600">About</a>
+        <a href="/privacy.html" class="hover:text-emerald-600">Privacy</a>
+        <a href="/contact.html" class="hover:text-emerald-600">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <script>
+    // Toggle mobile menu visibility
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>
