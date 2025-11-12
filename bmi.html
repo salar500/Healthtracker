@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- ========== META DATA ========== -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BMI Calculator | HealthTracker</title>
+  <meta name="description" content="Use the HealthTracker BMI Calculator to quickly measure your Body Mass Index and understand whether your weight is healthy for your height. 100% private and accurate." />
+  <meta name="keywords" content="BMI calculator, body mass index, health calculator, weight index, HealthTracker tools" />
+  <meta name="author" content="HealthTracker Team" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="BMI Calculator | HealthTracker" />
+  <meta property="og:description" content="Instantly calculate your BMI and see your health category with HealthTracker’s simple, private tool." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yourdomain.com/bmi.html" />
+  <meta property="og:image" content="https://yourdomain.com/assets/preview.jpg" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+
+  <!-- Tailwind + Font -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>body{font-family:'Inter',sans-serif}</style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
+
+  <!-- Header -->
+  <header class="bg-white/90 backdrop-blur border-b sticky top-0 z-50 shadow-sm">
+    <div class="max-w-6xl mx-auto flex justify-between items-center px-4 py-3 md:py-4">
+      <a href="/index.html" class="flex items-center space-x-2">
+        <img src="/assets/logo.svg" alt="HealthTracker Logo" class="h-8 w-8">
+        <span class="text-xl font-semibold text-emerald-600 hover:text-emerald-700">HealthTracker</span>
+      </a>
+      <nav class="hidden md:flex space-x-8 text-sm font-medium text-gray-600">
+        <a href="/index.html" class="hover:text-emerald-600">Home</a>
+        <a href="/bmi.html" class="text-emerald-600 font-semibold">BMI</a>
+        <a href="/about.html" class="hover:text-emerald-600">About</a>
+        <a href="/privacy.html" class="hover:text-emerald-600">Privacy</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <main class="flex-grow">
+    <section class="max-w-5xl mx-auto px-6 py-12 md:py-20 text-center">
+      <h1 class="text-4xl font-semibold text-emerald-600 mb-3">BMI Calculator</h1>
+      <p class="text-gray-600 text-lg mb-10 max-w-2xl mx-auto">
+        Quickly calculate your Body Mass Index (BMI) to see if your weight is within a healthy range for your height.
+      </p>
+
+      <!-- Calculator Card -->
+      <div class="max-w-3xl mx-auto bg-white rounded-2xl shadow p-8 md:p-10 text-left">
+        <h2 class="text-xl font-semibold text-emerald-600 mb-4">Enter Your Details</h2>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div>
+            <label for="height" class="block text-sm font-medium text-gray-700">Height (cm)</label>
+            <input id="height" type="number" min="50" max="250" placeholder="e.g. 170" class="w-full mt-1 p-2 border rounded-lg focus:ring-2 focus:ring-emerald-400">
+          </div>
+          <div>
+            <label for="weight" class="block text-sm font-medium text-gray-700">Weight (kg)</label>
+            <input id="weight" type="number" min="10" max="250" placeholder="e.g. 65" class="w-full mt-1 p-2 border rounded-lg focus:ring-2 focus:ring-emerald-400">
+          </div>
+        </div>
+
+        <button id="calculate" class="w-full mt-6 bg-emerald-500 text-white font-semibold py-2 rounded-lg hover:bg-emerald-600 transition">
+          Calculate BMI
+        </button>
+
+        <!-- Result -->
+        <div id="result-area" class="mt-8 bg-gray-50 border rounded-xl p-6 text-center hidden">
+          <p class="text-sm text-gray-500">Your BMI is</p>
+          <p id="bmi-value" class="text-4xl font-bold text-emerald-600 my-2">—</p>
+          <p id="bmi-category" class="text-lg font-medium text-gray-700">—</p>
+          <div class="mt-4 h-3 w-full bg-gray-200 rounded-full overflow-hidden">
+            <div id="bmi-bar" class="h-full bg-emerald-500 w-0 transition-all duration-700 ease-in-out"></div>
+          </div>
+          <p class="text-xs text-gray-500 mt-2">Healthy BMI range: 18.5 – 24.9</p>
+        </div>
+
+        <p class="text-xs text-gray-400 mt-6">
+          *BMI is a general health indicator. Consult a healthcare professional for personalized advice.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t py-6 text-center text-sm text-gray-500">
+    <p>© 2025 HealthTracker. All rights reserved.</p>
+    <p class="mt-1 text-xs text-gray-400">Precision tools for personal wellness — private, fast, and free.</p>
+  </footer>
+
+  <!-- ========== SCRIPT ========== -->
+  <script>
+    const heightInput = document.getElementById('height');
+    const weightInput = document.getElementById('weight');
+    const resultArea = document.getElementById('result-area');
+    const bmiValue = document.getElementById('bmi-value');
+    const bmiCategory = document.getElementById('bmi-category');
+    const bmiBar = document.getElementById('bmi-bar');
+
+    document.getElementById('calculate').addEventListener('click', () => {
+      const height = parseFloat(heightInput.value);
+      const weight = parseFloat(weightInput.value);
+      if (!height || !weight || height <= 0 || weight <= 0) {
+        bmiValue.textContent = '—';
+        bmiCategory.textContent = 'Enter valid height and weight';
+        resultArea.classList.remove('hidden');
+        bmiBar.style.width = '0';
+        return;
+      }
+
+      const bmi = weight / ((height / 100) ** 2);
+      const rounded = Math.round(bmi * 10) / 10;
+      bmiValue.textContent = rounded;
+
+      let category = '';
+      let color = 'bg-emerald-500';
+      if (bmi < 18.5) { category = 'Underweight'; color = 'bg-blue-400'; }
+      else if (bmi < 25) { category = 'Normal weight'; color = 'bg-emerald-500'; }
+      else if (bmi < 30) { category = 'Overweight'; color = 'bg-yellow-500'; }
+      else { category = 'Obesity'; color = 'bg-red-500'; }
+
+      bmiCategory.textContent = category;
+      resultArea.classList.remove('hidden');
+      bmiBar.className = `${color} h-full transition-all duration-700 ease-in-out`;
+      const barWidth = Math.min(100, Math.max(10, (bmi / 40) * 100));
+      bmiBar.style.width = barWidth + '%';
+    });
+  </script>
+</body>
+</html>
