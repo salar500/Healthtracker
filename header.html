@@ -1,83 +1,83 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <!-- ========== META DATA ========== -->
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="HealthTracker — simple, privacy-friendly health and fitness calculators including BMI, hydration, sleep, and more. No login, no tracking, just useful tools." />
-  <meta name="keywords" content="BMI calculator, health tracker, fitness tools, hydration calculator, sleep calculator, body mass index" />
-  <meta name="author" content="HealthTracker Team" />
+<!-- ========== HEADER WITH SIDEBAR (Option B) ========== -->
+<header class="bg-white/90 backdrop-blur-md border-b sticky top-0 z-50 shadow-sm transition-all">
+  <div class="max-w-6xl mx-auto flex items-center justify-between px-4 py-3 md:py-4">
 
-  <!-- Open Graph for Social Sharing -->
-  <meta property="og:title" content="HealthTracker — Simple Health Calculators" />
-  <meta property="og:description" content="Track your health easily with fast, privacy-friendly tools — BMI, sleep, hydration, and more." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://yourdomain.com" />
-  <meta property="og:image" content="https://yourdomain.com/assets/preview.jpg" />
+    <!-- Logo -->
+    <a href="index.html" class="flex items-center space-x-2">
+      <img src="assets/logo.svg" alt="HealthTracker Logo" class="h-8 w-8">
+      <span class="text-xl font-semibold text-emerald-600 hover:text-emerald-700 transition">
+        HealthTracker
+      </span>
+    </a>
 
-  <!-- Favicon -->
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex space-x-8 text-sm font-medium text-gray-600">
+      <a href="index.html" class="hover:text-emerald-600 transition">Home</a>
+      <a href="bmi.html" class="hover:text-emerald-600 transition">BMI</a>
+      <a href="hydration.html" class="hover:text-emerald-600 transition">Hydration</a>
+      <a href="sleep.html" class="hover:text-emerald-600 transition">Sleep</a>
+      <a href="about.html" class="hover:text-emerald-600 transition">About</a>
+      <a href="privacy.html" class="hover:text-emerald-600 transition">Privacy</a>
+      <a href="contact.html" class="hover:text-emerald-600 transition">Contact</a>
+    </nav>
 
-  <!-- Title -->
-  <title>HealthTracker</title>
+    <!-- Mobile Menu Button -->
+    <button id="menu-toggle" class="md:hidden text-gray-600 hover:text-emerald-600 transition" aria-label="Toggle menu">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M4 6h16M4 12h16m0 6H4" />
+      </svg>
+    </button>
+  </div>
+</header>
 
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
+<!-- ========== SIDEBAR & OVERLAY (MOBILE ONLY) ========== -->
+<div id="overlay" class="fixed inset-0 bg-black/40 backdrop-blur-sm hidden z-40"></div>
 
-  <!-- Custom Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    body { font-family: 'Inter', sans-serif; }
-  </style>
-</head>
-<body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
+<aside id="sidebar"
+  class="fixed right-0 top-0 h-full w-64 bg-white shadow-xl translate-x-full transition-transform duration-300 z-50 p-6 space-y-6">
+  
+  <!-- Close Button -->
+  <button id="close-sidebar" class="absolute top-4 right-4 text-gray-500 hover:text-red-500 transition">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M6 18L18 6M6 6l12 12" />
+    </svg>
+  </button>
 
-  <!-- ========== HEADER ========== -->
-  <header class="bg-white/90 backdrop-blur-md border-b sticky top-0 z-50 shadow-sm transition-all">
-    <div class="max-w-6xl mx-auto flex items-center justify-between px-4 py-3 md:py-4">
-      
-      <!-- Logo -->
-      <a href="index.html" class="flex items-center space-x-2">
-        <img src="assets/logo.svg" alt="HealthTracker Logo" class="h-8 w-8">
-        <span class="text-xl font-semibold text-emerald-600 tracking-tight hover:text-emerald-700 transition-colors">
-          HealthTracker
-        </span>
-      </a>
+  <!-- Sidebar Title -->
+  <h2 class="text-lg font-semibold text-emerald-600">Menu</h2>
 
-      <!-- Desktop Nav -->
-      <nav class="hidden md:flex space-x-8 text-sm font-medium text-gray-600">
-        <a href="index.html" class="hover:text-emerald-600 transition">Home</a>
-        <a href="about.html" class="hover:text-emerald-600 transition">About</a>
-        <a href="privacy.html" class="hover:text-emerald-600 transition">Privacy</a>
-        <a href="contact.html" class="hover:text-emerald-600 transition">Contact</a>
-      </nav>
+  <!-- Sidebar Navigation -->
+  <nav class="flex flex-col space-y-3 text-gray-700 text-base font-medium">
+    <a href="index.html" class="hover:text-emerald-600">Home</a>
+    <a href="bmi.html" class="hover:text-emerald-600">BMI Calculator</a>
+    <a href="hydration.html" class="hover:text-emerald-600">Hydration Calculator</a>
+    <a href="sleep.html" class="hover:text-emerald-600">Sleep Calculator</a>
+    <a href="about.html" class="hover:text-emerald-600">About</a>
+    <a href="privacy.html" class="hover:text-emerald-600">Privacy Policy</a>
+    <a href="contact.html" class="hover:text-emerald-600">Contact</a>
+  </nav>
+</aside>
 
-      <!-- Mobile Menu Button -->
-      <button id="menu-toggle" class="md:hidden focus:outline-none text-gray-600 hover:text-emerald-600 transition" aria-label="Toggle menu">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-        </svg>
-      </button>
-    </div>
+<!-- ========== SIDEBAR SCRIPT ========== -->
+<script>
+  const sidebar = document.getElementById("sidebar");
+  const overlay = document.getElementById("overlay");
+  const openBtn = document.getElementById("menu-toggle");
+  const closeBtn = document.getElementById("close-sidebar");
 
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden bg-white border-t text-gray-700">
-      <nav class="flex flex-col px-4 py-2 space-y-2">
-        <a href="index.html" class="hover:text-emerald-600">Home</a>
-        <a href="about.html" class="hover:text-emerald-600">About</a>
-        <a href="privacy.html" class="hover:text-emerald-600">Privacy</a>
-        <a href="contact.html" class="hover:text-emerald-600">Contact</a>
-      </nav>
-    </div>
-  </header>
+  const openSidebar = () => {
+    sidebar.classList.remove("translate-x-full");
+    overlay.classList.remove("hidden");
+  };
 
-  <script>
-    // Toggle mobile menu visibility
-    const menuToggle = document.getElementById('menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-    menuToggle.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-  </script>
-</body>
-</html>
+  const closeSidebar = () => {
+    sidebar.classList.add("translate-x-full");
+    overlay.classList.add("hidden");
+  };
+
+  openBtn.addEventListener("click", openSidebar);
+  closeBtn.addEventListener("click", closeSidebar);
+  overlay.addEventListener("click", closeSidebar);
+</script>
