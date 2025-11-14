@@ -22,18 +22,36 @@
   <!-- Tailwind + Font -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>body{font-family:'Inter',sans-serif}</style>
+
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+  </style>
 </head>
 
 <body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
 
+  <!-- ========== HAMBURGER MENU BUTTON ========== -->
+  <button id="menu-btn"
+    class="fixed top-4 left-4 bg-white border rounded-lg p-2 shadow hover:bg-gray-100 transition z-50">
+    <svg xmlns="http://www.w3.org/2000/svg"
+         class="h-6 w-6 text-gray-700" fill="none"
+         viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16" />
+    </svg>
+  </button>
+
+  <!-- Sidebar Loader -->
+  <div id="sidebar-container"></div>
+
   <!-- ========== HEADER ========== -->
-  <header class="bg-white/90 backdrop-blur border-b sticky top-0 z-50 shadow-sm">
+  <header class="bg-white/90 backdrop-blur border-b sticky top-0 z-40 shadow-sm">
     <div class="max-w-6xl mx-auto flex justify-between items-center px-4 py-3 md:py-4">
       <a href="index.html" class="flex items-center space-x-2">
         <img src="assets/logo.svg" alt="HealthTracker Logo" class="h-8 w-8">
         <span class="text-xl font-semibold text-emerald-600 hover:text-emerald-700">HealthTracker</span>
       </a>
+
       <nav class="hidden md:flex space-x-8 text-sm font-medium text-gray-600">
         <a href="index.html" class="hover:text-emerald-600">Home</a>
         <a href="about.html" class="hover:text-emerald-600">About</a>
@@ -57,26 +75,31 @@
         <form id="contact-form" class="space-y-5">
           <div>
             <label for="name" class="block text-sm font-medium text-gray-700">Your Name</label>
-            <input id="name" type="text" placeholder="John Doe" required class="w-full mt-1 p-2 border rounded-lg focus:ring-2 focus:ring-emerald-400">
+            <input id="name" type="text" placeholder="John Doe" required
+              class="w-full mt-1 p-2 border rounded-lg focus:ring-2 focus:ring-emerald-400">
           </div>
 
           <div>
             <label for="email" class="block text-sm font-medium text-gray-700">Your Email</label>
-            <input id="email" type="email" placeholder="you@example.com" required class="w-full mt-1 p-2 border rounded-lg focus:ring-2 focus:ring-emerald-400">
+            <input id="email" type="email" placeholder="you@example.com" required
+              class="w-full mt-1 p-2 border rounded-lg focus:ring-2 focus:ring-emerald-400">
           </div>
 
           <div>
             <label for="message" class="block text-sm font-medium text-gray-700">Your Message</label>
-            <textarea id="message" rows="4" placeholder="Type your message here..." required class="w-full mt-1 p-2 border rounded-lg focus:ring-2 focus:ring-emerald-400"></textarea>
+            <textarea id="message" rows="4" placeholder="Type your message here..." required
+              class="w-full mt-1 p-2 border rounded-lg focus:ring-2 focus:ring-emerald-400"></textarea>
           </div>
 
-          <button type="submit" class="w-full bg-emerald-500 text-white font-semibold py-2 rounded-lg hover:bg-emerald-600 transition">
+          <button type="submit"
+            class="w-full bg-emerald-500 text-white font-semibold py-2 rounded-lg hover:bg-emerald-600 transition">
             Send Message
           </button>
         </form>
 
         <!-- Success Message -->
-        <div id="form-success" class="hidden text-center mt-6 bg-emerald-50 border border-emerald-200 rounded-xl py-4 px-3">
+        <div id="form-success"
+          class="hidden text-center mt-6 bg-emerald-50 border border-emerald-200 rounded-xl py-4 px-3">
           <p class="text-emerald-700 font-medium">✅ Message ready!</p>
           <p class="text-sm text-gray-600">This demo form doesn’t store or send data — everything stays in your browser.</p>
         </div>
@@ -92,14 +115,31 @@
 
   <!-- ========== SCRIPT ========== -->
   <script>
+    // Demo form behavior
     const form = document.getElementById('contact-form');
     const success = document.getElementById('form-success');
+
     form.addEventListener('submit', e => {
       e.preventDefault();
       form.reset();
       success.classList.remove('hidden');
       setTimeout(() => success.classList.add('hidden'), 6000);
     });
+
+    // Load sidebar
+    fetch("sidebar.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("sidebar-container").innerHTML = html;
+
+        const sidebar = document.getElementById("sidebar-menu");
+        const closeBtn = document.getElementById("close-menu");
+        const menuBtn = document.getElementById("menu-btn");
+
+        menuBtn.onclick = () => sidebar.style.right = "0px";
+        closeBtn.onclick = () => sidebar.style.right = "-260px";
+      });
   </script>
+
 </body>
 </html>
