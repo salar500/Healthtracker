@@ -1,6 +1,6 @@
 <!-- ========== SIDEBAR MENU (HealthTracker) ========== -->
 <div id="sidebar-menu"
-  class="fixed top-0 right-[-260px] w-64 h-full bg-white shadow-xl border-l border-gray-200 z-50 transition-all duration-300">
+  class="fixed top-0 right-[-260px] w-64 h-full bg-white shadow-xl border-l border-gray-200 z-[9998] transition-all duration-300">
 
   <!-- Header -->
   <div class="p-4 border-b flex justify-between items-center">
@@ -20,14 +20,14 @@
   </nav>
 </div>
 
-
 <!-- ========== COOKIE CONSENT BANNER (Appears once only) ========== -->
 <div id="cookie-banner"
-  class="fixed bottom-4 right-4 max-w-sm bg-white shadow-xl border border-gray-200 rounded-xl p-4 z-[999] hidden">
+  class="fixed bottom-4 right-4 max-w-sm bg-white shadow-xl border border-gray-200 rounded-xl p-4 
+         z-[9999] hidden">
 
-  <p class="text-sm text-gray-700 mb-3">
-    We use a minimal cookie to remember your preferences.  
-    No tracking. No ads. No personal data stored.
+  <p class="text-sm text-gray-700 mb-3 leading-relaxed">
+    We use a minimal cookie only to remember that you closed this message.  
+    No tracking, no analytics, no ads.
   </p>
 
   <button id="accept-cookie"
@@ -37,14 +37,14 @@
 </div>
 
 <script>
-  // Check if cookie consent was already given
+  // Show cookie banner once
   if (!localStorage.getItem("cookieAccepted")) {
     document.getElementById("cookie-banner").classList.remove("hidden");
   }
 
-  // Accept button
-  document.getElementById("accept-cookie").addEventListener("click", () => {
+  // Hide + save user choice
+  document.getElementById("accept-cookie").onclick = () => {
     localStorage.setItem("cookieAccepted", "yes");
     document.getElementById("cookie-banner").classList.add("hidden");
-  });
+  };
 </script>
