@@ -10,41 +10,41 @@
 
   <!-- Navigation -->
   <nav class="p-4 space-y-3 text-gray-700 text-sm font-medium">
-
-    <a href="index.html"
-       class="block hover:bg-emerald-50 hover:text-emerald-600 p-2 rounded transition">
-       Home
-    </a>
-
-    <a href="bmi.html"
-       class="block hover:bg-emerald-50 hover:text-emerald-600 p-2 rounded transition">
-       BMI Calculator
-    </a>
-
-    <a href="hydration.html"
-       class="block hover:bg-emerald-50 hover:text-emerald-600 p-2 rounded transition">
-       Hydration Calculator
-    </a>
-
-    <a href="sleep.html"
-       class="block hover:bg-emerald-50 hover:text-emerald-600 p-2 rounded transition">
-       Sleep Calculator
-    </a>
-
-    <a href="about.html"
-       class="block hover:bg-emerald-50 hover:text-emerald-600 p-2 rounded transition">
-       About
-    </a>
-
-    <a href="privacy.html"
-       class="block hover:bg-emerald-50 hover:text-emerald-600 p-2 rounded transition">
-       Privacy
-    </a>
-
-    <a href="contact.html"
-       class="block hover:bg-emerald-50 hover:text-emerald-600 p-2 rounded transition">
-       Contact
-    </a>
-
+    <a href="index.html" class="block hover:bg-emerald-50 hover:text-emerald-600 p-2 rounded transition">Home</a>
+    <a href="bmi.html" class="block hover:bg-emerald-50 hover:text-emerald-600 p-2 rounded transition">BMI Calculator</a>
+    <a href="hydration.html" class="block hover:bg-emerald-50 hover:text-emerald-600 p-2 rounded transition">Hydration Calculator</a>
+    <a href="sleep.html" class="block hover:bg-emerald-50 hover:text-emerald-600 p-2 rounded transition">Sleep Calculator</a>
+    <a href="about.html" class="block hover:bg-emerald-50 hover:text-emerald-600 p-2 rounded transition">About</a>
+    <a href="privacy.html" class="block hover:bg-emerald-50 hover:text-emerald-600 p-2 rounded transition">Privacy</a>
+    <a href="contact.html" class="block hover:bg-emerald-50 hover:text-emerald-600 p-2 rounded transition">Contact</a>
   </nav>
 </div>
+
+
+<!-- ========== COOKIE CONSENT BANNER (Appears once only) ========== -->
+<div id="cookie-banner"
+  class="fixed bottom-4 right-4 max-w-sm bg-white shadow-xl border border-gray-200 rounded-xl p-4 z-[999] hidden">
+
+  <p class="text-sm text-gray-700 mb-3">
+    We use a minimal cookie to remember your preferences.  
+    No tracking. No ads. No personal data stored.
+  </p>
+
+  <button id="accept-cookie"
+    class="w-full bg-emerald-500 text-white text-sm font-semibold py-2 rounded-lg hover:bg-emerald-600 transition">
+    OK, Got it
+  </button>
+</div>
+
+<script>
+  // Check if cookie consent was already given
+  if (!localStorage.getItem("cookieAccepted")) {
+    document.getElementById("cookie-banner").classList.remove("hidden");
+  }
+
+  // Accept button
+  document.getElementById("accept-cookie").addEventListener("click", () => {
+    localStorage.setItem("cookieAccepted", "yes");
+    document.getElementById("cookie-banner").classList.add("hidden");
+  });
+</script>
