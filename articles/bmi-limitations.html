@@ -4,8 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Limitations of BMI | HealthTracker</title>
-  <meta name="description" content="Learn the major limitations of BMI, including why it cannot measure body fat, muscle mass, or full health.">
+  <meta name="description" content="Discover the major limitations of BMI, including why it cannot measure body fat, muscle mass, or overall health accurately.">
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+  <!-- Tailwind + Font -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>body{font-family:'Inter',sans-serif}</style>
@@ -13,78 +15,95 @@
 
 <body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
 
+  <!-- Hamburger -->
   <button id="menu-btn"
     class="fixed top-4 right-4 bg-white border rounded-lg p-2 shadow z-50">
     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
-         viewBox="0 0 24 24" stroke="currentColor">
+        viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
             d="M4 6h16M4 12h16M4 18h16" />
     </svg>
   </button>
 
+  <!-- Sidebar -->
   <div id="sidebar-container"></div>
 
+  <!-- Header -->
   <header class="bg-white/90 backdrop-blur border-b sticky top-0 z-40 shadow-sm">
     <div class="max-w-6xl mx-auto flex justify-between items-center px-4 py-3">
       <a href="../index.html" class="flex items-center space-x-2">
-        <img src="../assets/logo.svg" class="h-8 w-8">
+        <img src="../assets/logo.svg" class="h-8 w-8" alt="HealthTracker Logo">
         <span class="text-xl font-semibold text-emerald-600">HealthTracker</span>
       </a>
     </div>
   </header>
 
+  <!-- Main -->
   <main class="flex-grow">
     <section class="max-w-4xl mx-auto px-6 py-12">
 
       <h1 class="text-4xl font-semibold text-emerald-600 mb-6">Limitations of BMI</h1>
 
       <p class="text-gray-600 mb-6">
-        Although BMI is widely used, it has several important limitations that make it an incomplete measure of health.
+        Although BMI is a useful quick measurement, it has several important limitations that prevent it from showing a full picture of a person’s health.
       </p>
 
-      <h2 class="text-xl font-semibold text-emerald-600 mb-3">1. Does Not Measure Body Fat</h2>
-      <p class="text-gray-600 mb-6">
-        BMI cannot distinguish between muscle and fat, so athletes may appear “overweight” even with low body fat.
-      </p>
+      <div class="bg-white p-6 rounded-xl shadow space-y-6">
 
-      <h2 class="text-xl font-semibold text-emerald-600 mb-3">2. Does Not Consider Fat Distribution</h2>
-      <p class="text-gray-600 mb-6">
-        Two people with identical BMI values can have very different health risks depending on where fat is stored.
-      </p>
+        <div>
+          <h2 class="text-xl font-semibold text-emerald-600 mb-2">1. BMI Does Not Measure Body Fat</h2>
+          <p class="text-gray-700">
+            People with high muscle mass (like athletes) may be classified as “overweight” even with very low body fat.
+          </p>
+        </div>
 
-      <h2 class="text-xl font-semibold text-emerald-600 mb-3">3. Does Not Work Well for All Ages</h2>
-      <p class="text-gray-600 mb-6">
-        Older adults, children, and highly muscular individuals may get misleading BMI results.
-      </p>
+        <div>
+          <h2 class="text-xl font-semibold text-emerald-600 mb-2">2. BMI Ignores Fat Distribution</h2>
+          <p class="text-gray-700">
+            BMI cannot show where fat is stored — belly fat is more dangerous than fat in other areas.
+          </p>
+        </div>
 
-      <h2 class="text-xl font-semibold text-emerald-600 mb-3">4. Only One Health Indicator</h2>
-      <p class="text-gray-600 mb-8">
-        BMI should be used alongside other health metrics, like body fat %, waist size, and activity level.
-      </p>
+        <div>
+          <h2 class="text-xl font-semibold text-emerald-600 mb-2">3. Less Accurate for Certain Groups</h2>
+          <p class="text-gray-700">
+            Children, older adults, bodybuilders, and pregnant individuals often get misleading BMI results.
+          </p>
+        </div>
 
-      <a href="../bmi.html" class="text-emerald-600 font-medium hover:underline">
+        <div>
+          <h2 class="text-xl font-semibold text-emerald-600 mb-2">4. BMI Is Only One Health Indicator</h2>
+          <p class="text-gray-700">
+            A full evaluation requires more data — body fat %, waist size, activity level, and overall fitness.
+          </p>
+        </div>
+
+      </div>
+
+      <a href="../bmi.html" class="text-emerald-600 font-medium hover:underline inline-block mt-10">
         ← Back to BMI Calculator
       </a>
 
     </section>
   </main>
 
+  <!-- Footer -->
   <footer class="bg-white border-t py-8 text-center text-sm text-gray-500">
     © 2025 HealthTracker. All rights reserved.
   </footer>
 
+  <!-- Sidebar Script -->
   <script>
     fetch("../sidebar.html")
       .then(res=>res.text())
       .then(html=>{
         document.getElementById("sidebar-container").innerHTML = html;
-        sidebar = document.getElementById("sidebar-menu");
-        closeMenu = document.getElementById("close-menu");
-        document.getElementById("menu-btn").onclick = () => sidebar.style.right = "0px";
-        closeMenu.onclick = () => sidebar.style.right = "-260px";
+        const sidebar = document.getElementById("sidebar-menu");
+        const closeMenu = document.getElementById("close-menu");
+        document.getElementById("menu-btn").onclick = () => sidebar.style.right="0px";
+        closeMenu.onclick = () => sidebar.style.right="-260px";
       });
   </script>
 
 </body>
 </html>
-
