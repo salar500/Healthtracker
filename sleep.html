@@ -22,7 +22,10 @@
   <!-- Tailwind + Font -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>body{font-family:'Inter',sans-serif}</style>
+
+  <style>
+    body { font-family:'Inter',sans-serif }
+  </style>
 </head>
 
 <body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
@@ -42,11 +45,12 @@
 
   <!-- ========== HEADER ========== -->
   <header class="bg-white/90 backdrop-blur border-b sticky top-0 z-40 shadow-sm">
-<div class="max-w-6xl mx-auto flex justify-between items-center px-4 py-3 md:py-4 pr-14">
+    <div class="max-w-6xl mx-auto flex justify-between items-center px-4 py-3 md:py-4 pr-14">
       <a href="index.html" class="flex items-center space-x-2">
         <img src="assets/logo.svg" alt="HealthTracker Logo" class="h-8 w-8">
         <span class="text-xl font-semibold text-emerald-600 hover:text-emerald-700">HealthTracker</span>
       </a>
+
       <nav class="hidden md:flex space-x-8 text-sm font-medium text-gray-600">
         <a href="index.html" class="hover:text-emerald-600">Home</a>
         <a href="bmi.html" class="hover:text-emerald-600">BMI</a>
@@ -62,7 +66,7 @@
     <section class="max-w-5xl mx-auto px-6 py-12 md:py-20 text-center">
       <h1 class="text-4xl font-semibold text-emerald-600 mb-3">Sleep Calculator</h1>
       <p class="text-gray-600 text-lg mb-10 max-w-2xl mx-auto">
-        Discover the best times to sleep or wake up for a full night’s rest.
+        Discover the best times to sleep or wake up for a full night’s rest.<br>
         Based on natural 90-minute sleep cycles — because timing matters.
       </p>
 
@@ -107,15 +111,26 @@
     </section>
   </main>
 
-  <!-- ========== FOOTER ========== -->
-  <footer class="bg-white border-t py-6 text-center text-sm text-gray-500">
-    <p>© 2025 HealthTracker. All rights reserved.</p>
-    <p class="mt-1 text-xs text-gray-400">Sleep well, live better — powered by simple science.</p>
+  <!-- ========== GLOBAL FOOTER (UPDATED) ========== -->
+  <footer class="bg-white border-t py-8 text-center text-sm text-gray-500">
+    <div class="max-w-6xl mx-auto px-4 space-y-3">
+
+      <!-- Nav Links -->
+      <nav class="space-x-4 text-gray-600 font-medium">
+        <a href="about.html" class="hover:text-emerald-600 transition">About Us</a>
+        <a href="sitemap.html" class="hover:text-emerald-600 transition">Sitemap</a>
+        <a href="disclaimer.html" class="hover:text-emerald-600 transition">Terms of Use</a>
+        <a href="privacy.html" class="hover:text-emerald-600 transition">Privacy Policy</a>
+      </nav>
+
+      <p>© 2025 <strong>HealthTracker</strong>. All rights reserved.</p>
+      <p class="text-xs text-gray-400">Sleep well, live better — powered by simple science.</p>
+    </div>
   </footer>
 
   <!-- ========== SCRIPT ========== -->
   <script>
-    // Load sidebar.html
+    // Load sidebar
     fetch("sidebar.html")
       .then(res => res.text())
       .then(html => {
