@@ -5,38 +5,126 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>How Much Water Do Athletes Need? | HealthTracker</title>
   <meta name="description" content="Athletes need more water than average people. Learn how to calculate proper hydration for workouts and sports." />
-  <link rel="stylesheet" href="../article-style.css">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+  <!-- TailwindCSS + Inter Font -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style> body { font-family: 'Inter', sans-serif; } </style>
 </head>
 
-<body>
-  <article class="article-container">
+<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
 
-    <h1>How Much Water Do Athletes Need Daily?</h1>
+  <!-- Menu Button -->
+  <button id="menu-btn"
+    class="fixed top-4 right-4 bg-white border rounded-lg p-2 shadow z-50">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+        viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16" />
+    </svg>
+  </button>
 
-    <p>Athletes and active individuals need significantly more water due to sweating, higher metabolism, and muscle activity.</p>
+  <!-- Sidebar -->
+  <div id="sidebar-container"></div>
 
-    <h2>1. Baseline Water Needs</h2>
-    <p>The average person needs around <strong>30–35 ml per kg of body weight</strong>. Athletes exceed this.</p>
+  <!-- Header -->
+  <header class="bg-white/90 backdrop-blur border-b sticky top-0 z-40 shadow-sm">
+    <div class="max-w-6xl mx-auto flex justify-between items-center px-4 py-3">
+      <a href="../index.html" class="flex items-center space-x-2">
+        <img src="../assets/logo.svg" class="h-8 w-8">
+        <span class="text-xl font-semibold text-emerald-600">HealthTracker</span>
+      </a>
+    </div>
+  </header>
 
-    <h2>2. Add Water for Every Hour of Exercise</h2>
-    <p>Add **0.5 to 1 liter** of water per hour of intense exercise.</p>
+  <!-- Main -->
+  <main class="flex-grow">
+    <section class="max-w-4xl mx-auto px-6 py-12">
 
-    <h2>3. Hydrate Before, During, and After Activity</h2>
-    <ul>
-      <li><strong>Before:</strong> 500 ml water</li>
-      <li><strong>During:</strong> 150–250 ml every 15–20 minutes</li>
-      <li><strong>After:</strong> Replace fluids lost through sweat</li>
-    </ul>
+      <h1 class="text-4xl font-semibold text-emerald-600 mb-6">
+        How Much Water Do Athletes Need Daily?
+      </h1>
 
-    <h2>4. Check Sweat Loss</h2>
-    <p>Weigh yourself before and after exercise. Each 1 kg lost = 1 liter water needed.</p>
+      <p class="text-gray-600 leading-relaxed mb-6">
+        Athletes and active individuals require more water due to sweating, increased metabolism, and muscle activity.
+      </p>
 
-    <h2>5. Include Electrolytes</h2>
-    <p>During long workouts, drink fluids containing sodium, potassium, and magnesium.</p>
+      <div class="bg-white p-6 rounded-xl shadow space-y-6">
 
-    <p><strong>Tip:</strong> The Hydration Calculator gives a solid estimate for your daily baseline intake.</p>
+        <div>
+          <h2 class="text-xl font-semibold text-emerald-600 mb-2">1. Baseline Water Requirements</h2>
+          <p class="text-gray-700">
+            The general recommendation is <strong>30–35 ml per kg of body weight</strong>.  
+            Athletes typically require more due to higher activity levels.
+          </p>
+        </div>
 
-    <a href="../hydration.html" class="back-link">← Back to Hydration Calculator</a>
-  </article>
+        <div>
+          <h2 class="text-xl font-semibold text-emerald-600 mb-2">2. Extra Water for Exercise</h2>
+          <p class="text-gray-700">
+            Add <strong>0.5 to 1 liter</strong> of water for every hour of intense exercise or sports.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-semibold text-emerald-600 mb-2">3. Hydrate Before, During & After Workouts</h2>
+          <ul class="list-disc pl-6 text-gray-700 space-y-1">
+            <li><strong>Before:</strong> 500 ml of water</li>
+            <li><strong>During:</strong> 150–250 ml every 15–20 minutes</li>
+            <li><strong>After:</strong> Replace fluids lost through sweat</li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-semibold text-emerald-600 mb-2">4. Monitor Sweat Loss</h2>
+          <p class="text-gray-700">
+            Weigh yourself before and after workouts.  
+            <strong>Each 1 kg lost = 1 liter of water needed</strong> to rehydrate fully.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-semibold text-emerald-600 mb-2">5. Include Electrolytes</h2>
+          <p class="text-gray-700">
+            During extended training sessions, add fluids containing sodium, potassium, and magnesium to prevent cramps and fatigue.
+          </p>
+        </div>
+
+      </div>
+
+      <p class="text-gray-700 mt-6">
+        <strong>Tip:</strong> Use the Hydration Calculator to estimate your ideal baseline water intake.
+      </p>
+
+      <a href="../hydration.html" class="text-emerald-600 font-medium hover:underline inline-block mt-10">
+        ← Back to Hydration Calculator
+      </a>
+
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t py-8 text-center text-sm text-gray-500">
+    © 2025 HealthTracker. All rights reserved.
+  </footer>
+
+  <!-- Sidebar Loader -->
+  <script>
+    fetch("../sidebar.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("sidebar-container").innerHTML = html;
+        const sidebar = document.getElementById("sidebar-menu");
+        const closeMenu = document.getElementById("close-menu");
+
+        document.getElementById("menu-btn").onclick =
+          () => sidebar.style.right = "0px";
+        closeMenu.onclick =
+          () => sidebar.style.right = "-260px";
+      });
+  </script>
+
 </body>
 </html>
