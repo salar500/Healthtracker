@@ -2,83 +2,35 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <!-- Main Pages -->
-  <url>
-    <loc>https://salar500.github.io/Healthtracker/</loc>
-  </url>
-  <url>
-    <loc>https://salar500.github.io/Healthtracker/index.html</loc>
-  </url>
-  <url>
-    <loc>https://salar500.github.io/Healthtracker/bmi.html</loc>
-  </url>
-  <url>
-    <loc>https://salar500.github.io/Healthtracker/hydration.html</loc>
-  </url>
-  <url>
-    <loc>https://salar500.github.io/Healthtracker/sleep.html</loc>
-  </url>
-  <url>
-    <loc>https://salar500.github.io/Healthtracker/about.html</loc>
-  </url>
-  <url>
-    <loc>https://salar500.github.io/Healthtracker/privacy.html</loc>
-  </url>
-  <url>
-    <loc>https://salar500.github.io/Healthtracker/disclaimer.html</loc>
-  </url>
-  <url>
-    <loc>https://salar500.github.io/Healthtracker/contact.html</loc>
-  </url>
-  <url>
-    <loc>https://salar500.github.io/Healthtracker/sitemap.html</loc>
-  </url>
+  <url><loc>https://salar500.github.io/Healthtracker/</loc></url>
+  <url><loc>https://salar500.github.io/Healthtracker/index.html</loc></url>
+  <url><loc>https://salar500.github.io/Healthtracker/bmi.html</loc></url>
+  <url><loc>https://salar500.github.io/Healthtracker/hydration.html</loc></url>
+  <url><loc>https://salar500.github.io/Healthtracker/sleep.html</loc></url>
+  <url><loc>https://salar500.github.io/Healthtracker/about.html</loc></url>
+  <url><loc>https://salar500.github.io/Healthtracker/privacy.html</loc></url>
+  <url><loc>https://salar500.github.io/Healthtracker/disclaimer.html</loc></url>
+  <url><loc>https://salar500.github.io/Healthtracker/contact.html</loc></url>
+  <url><loc>https://salar500.github.io/Healthtracker/sitemap.html</loc></url>
 
   <!-- BMI Articles -->
-  <url>
-    <loc>https://salar500.github.io/Healthtracker/articles/bmi-what-is-bmi.html</loc>
-  </url>
-  <url>
-    <loc>https://salar500.github.io/Healthtracker/articles/bmi-healthy-range.html</loc>
-  </url>
-  <url>
-    <loc>https://salar500.github.io/Healthtracker/articles/bmi-limitations.html</loc>
-  </url>
-  <url>
-    <loc>https://salar500.github.io/Healthtracker/articles/bmi-age-changes.html</loc>
-  </url>
-  <url>
-    <loc>https://salar500.github.io/Healthtracker/articles/bmi-how-to-lower-bmi.html</loc>
-  </url>
+  <url><loc>https://salar500.github.io/Healthtracker/articles/bmi-what-is-bmi.html</loc></url>
+  <url><loc>https://salar500.github.io/Healthtracker/articles/bmi-healthy-range.html</loc></url>
+  <url><loc>https://salar500.github.io/Healthtracker/articles/bmi-limitations.html</loc></url>
+  <url><loc>https://salar500.github.io/Healthtracker/articles/bmi-age-changes.html</loc></url>
+  <url><loc>https://salar500.github.io/Healthtracker/articles/bmi-how-to-lower-bmi.html</loc></url>
 
   <!-- Hydration Articles -->
-  <url>
-    <loc>https://salar500.github.io/Healthtracker/articles/hydration-how-much-water-should-you-drink.html</loc>
-  </url>
-  <url>
-    <loc>https://salar500.github.io/Healthtracker/articles/hydration-climate-and-activity.html</loc>
-  </url>
-  <url>
-    <loc>https://salar500.github.io/Healthtracker/articles/hydration-signs-of-dehydration.html</loc>
-  </url>
-  <url>
-    <loc>https://salar500.github.io/Healthtracker/articles/hydration-Signs-You-are-Not-Drinking-Enough-Water.html</loc>
-  </url>
-  <url>
-    <loc>https://salar500.github.io/Healthtracker/articles/hydration-water-for-athletes.html</loc>
-  </url>
+  <url><loc>https://salar500.github.io/Healthtracker/articles/hydration-how-much-water-should-you-drink.html</loc></url>
+  <url><loc>https://salar500.github.io/Healthtracker/articles/hydration-climate-and-activity.html</loc></url>
+  <url><loc>https://salar500.github.io/Healthtracker/articles/hydration-signs-of-dehydration.html</loc></url>
+  <url><loc>https://salar500.github.io/Healthtracker/articles/hydration-Signs-You-are-Not-Drinking-Enough-Water.html</loc></url>
+  <url><loc>https://salar500.github.io/Healthtracker/articles/hydration-water-for-athletes.html</loc></url>
 
   <!-- Sleep Articles -->
-  <url>
-    <loc>https://salar500.github.io/Healthtracker/articles/sleep-cycles.html</loc>
-  </url>
-  <url>
-    <loc>https://salar500.github.io/Healthtracker/articles/sleep-importance.html</loc>
-  </url>
-  <url>
-    <loc>https://salar500.github.io/Healthtracker/articles/sleep-screentime-effects.html</loc>
-  </url>
-  <url>
-    <loc>https://salar500.github.io/Healthtracker/articles/sleep-tips.html</loc>
-  </url>
+  <url><loc>https://salar500.github.io/Healthtracker/articles/sleep-cycles.html</loc></url>
+  <url><loc>https://salar500.github.io/Healthtracker/articles/sleep-importance.html</loc></url>
+  <url><loc>https://salar500.github.io/Healthtracker/articles/sleep-screentime-effects.html</loc></url>
+  <url><loc>https://salar500.github.io/Healthtracker/articles/sleep-tips.html</loc></url>
 
 </urlset>
