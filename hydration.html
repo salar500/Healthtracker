@@ -13,11 +13,11 @@
   <meta property="og:title" content="Hydration Calculator | HealthTracker" />
   <meta property="og:description" content="Find out exactly how much water you should drink daily based on your body weight, activity, and climate — private, accurate, and free." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://yourdomain.com/hydration.html" />
-  <meta property="og:image" content="https://yourdomain.com/assets/preview.jpg" />
+  <meta property="og:url" content="https://salar500.github.io/Healthtracker/hydration.html" />
+  <meta property="og:image" content="https://salar500.github.io/Healthtracker/assets/preview.jpg" />
 
   <!-- Favicon -->
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/Healthtracker/assets/favicon.svg" type="image/svg+xml" />
 
   <!-- Tailwind + Font -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -43,16 +43,16 @@
   <!-- ========== HEADER ========== -->
   <header class="bg-white/90 backdrop-blur border-b sticky top-0 z-40 shadow-sm">
     <div class="max-w-6xl mx-auto flex justify-between items-center px-4 py-3 md:py-4">
-      <a href="index.html" class="flex items-center space-x-2">
-        <img src="assets/logo.svg" alt="HealthTracker Logo" class="h-8 w-8">
+      <a href="/Healthtracker/index.html" class="flex items-center space-x-2">
+        <img src="/Healthtracker/assets/logo.svg" alt="HealthTracker Logo" class="h-8 w-8">
         <span class="text-xl font-semibold text-emerald-600 hover:text-emerald-700">HealthTracker</span>
       </a>
       <nav class="hidden md:flex space-x-8 text-sm font-medium text-gray-600">
-        <a href="index.html" class="hover:text-emerald-600">Home</a>
-        <a href="bmi.html" class="hover:text-emerald-600">BMI</a>
-        <a href="hydration.html" class="text-emerald-600 font-semibold">Hydration</a>
-        <a href="about.html" class="hover:text-emerald-600">About</a>
-        <a href="privacy.html" class="hover:text-emerald-600">Privacy</a>
+        <a href="/Healthtracker/index.html" class="hover:text-emerald-600">Home</a>
+        <a href="/Healthtracker/bmi.html" class="hover:text-emerald-600">BMI</a>
+        <a href="/Healthtracker/hydration.html" class="text-emerald-600 font-semibold">Hydration</a>
+        <a href="/Healthtracker/about.html" class="hover:text-emerald-600">About</a>
+        <a href="/Healthtracker/privacy.html" class="hover:text-emerald-600">Privacy</a>
       </nav>
     </div>
   </header>
@@ -114,15 +114,15 @@
     </section>
   </main>
 
-  <!-- ========== UPDATED FOOTER (Same on all pages) ========== -->
+  <!-- ========== UPDATED FOOTER ========== -->
   <footer class="bg-white border-t border-gray-100 mt-10 py-8 text-center text-sm text-gray-500">
     <div class="max-w-6xl mx-auto px-4 space-y-4">
 
       <nav class="flex justify-center flex-wrap gap-4 text-gray-600 font-medium">
-        <a href="about.html" class="hover:text-emerald-600 transition">About Us</a>
-        <a href="sitemap.html" class="hover:text-emerald-600 transition">Sitemap</a>
-        <a href="disclaimer.html" class="hover:text-emerald-600 transition">Terms of Use</a>
-        <a href="privacy.html" class="hover:text-emerald-600 transition">Privacy Policy</a>
+        <a href="/Healthtracker/about.html" class="hover:text-emerald-600 transition">About Us</a>
+        <a href="/Healthtracker/sitemap.html" class="hover:text-emerald-600 transition">Sitemap</a>
+        <a href="/Healthtracker/disclaimer.html" class="hover:text-emerald-600 transition">Terms of Use</a>
+        <a href="/Healthtracker/privacy.html" class="hover:text-emerald-600 transition">Privacy Policy</a>
       </nav>
 
       <div class="border-t border-gray-200 w-24 mx-auto"></div>
@@ -161,7 +161,7 @@
 
   <!-- ========== SIDEBAR LOADER ========== -->
   <script>
-    fetch("sidebar.html")
+    fetch("/Healthtracker/sidebar.html")
       .then(res => res.text())
       .then(html => {
         document.getElementById("sidebar-container").innerHTML = html;
