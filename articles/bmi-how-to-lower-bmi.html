@@ -1,37 +1,120 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>How to Lower Your BMI Safely | HealthTracker</title>
-  <meta name="description" content="Learn the safest and most effective ways to lower your BMI using evidence-based health strategies." />
-  <link rel="stylesheet" href="../article-style.css">
+  <meta name="description" content="Learn the safest and most effective ways to lower your BMI using science-backed lifestyle and nutrition strategies.">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+  <!-- Tailwind + Inter Font -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>body{font-family:'Inter',sans-serif}</style>
 </head>
 
-<body>
-  <article class="article-container">
-    <h1>How to Lower Your BMI Safely</h1>
+<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
 
-    <p>Lowering your BMI doesn’t require extreme dieting. Instead, sustainable lifestyle changes can make a lasting difference.</p>
+  <!-- Hamburger Menu -->
+  <button id="menu-btn"
+    class="fixed top-4 right-4 bg-white border rounded-lg p-2 shadow z-50">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+         viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"/>
+    </svg>
+  </button>
 
-    <h2>1. Increase Daily Activity</h2>
-    <p>Walking at least 30 minutes per day improves metabolism and helps regulate weight.</p>
+  <!-- Sidebar -->
+  <div id="sidebar-container"></div>
 
-    <h2>2. Choose High-Volume, Low-Calorie Foods</h2>
-    <p>Vegetables, fruits, lean proteins, and whole grains help reduce calories without leaving you hungry.</p>
+  <!-- Header -->
+  <header class="bg-white/90 backdrop-blur border-b sticky top-0 z-40 shadow-sm">
+    <div class="max-w-6xl mx-auto flex justify-between items-center px-4 py-3">
+      <a href="../index.html" class="flex items-center space-x-2">
+        <img src="../assets/logo.svg" class="h-8 w-8">
+        <span class="text-xl font-semibold text-emerald-600">HealthTracker</span>
+      </a>
+    </div>
+  </header>
 
-    <h2>3. Cut Back on Liquid Calories</h2>
-    <p>Sugary drinks, juices, and sodas add a large number of calories without filling you up.</p>
+  <!-- Main Content -->
+  <main class="flex-grow">
+    <section class="max-w-4xl mx-auto px-6 py-12">
 
-    <h2>4. Improve Sleep Quality</h2>
-    <p>Poor sleep increases hunger hormones, making weight control harder.</p>
+      <h1 class="text-4xl font-semibold text-emerald-600 mb-6">How to Lower Your BMI Safely</h1>
 
-    <h2>5. Drink More Water</h2>
-    <p>Staying hydrated helps control appetite and improve metabolism.</p>
+      <p class="text-gray-600 mb-6 leading-relaxed">
+        Lowering your BMI doesn’t require extreme dieting. Instead, sustainable lifestyle changes can make a lasting difference.
+      </p>
 
-    <p><strong>Tip:</strong> Recheck your progress regularly using our BMI Calculator.</p>
+      <div class="bg-white p-6 rounded-xl shadow space-y-6">
 
-    <a href="../bmi.html" class="back-link">← Back to BMI Calculator</a>
-  </article>
+        <div>
+          <h2 class="text-xl font-semibold text-emerald-600 mb-2">1. Increase Daily Activity</h2>
+          <p class="text-gray-700">
+            Walking at least 30 minutes per day improves metabolism and helps regulate weight.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-semibold text-emerald-600 mb-2">2. Choose High-Volume, Low-Calorie Foods</h2>
+          <p class="text-gray-700">
+            Vegetables, fruits, lean proteins, and whole grains reduce calorie intake without leaving you hungry.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-semibold text-emerald-600 mb-2">3. Cut Back on Liquid Calories</h2>
+          <p class="text-gray-700">
+            Sodas, juices, and sugary drinks add large amounts of calories without filling you up.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-semibold text-emerald-600 mb-2">4. Improve Sleep Quality</h2>
+          <p class="text-gray-700">
+            Poor sleep disrupts hunger hormones, making weight management more difficult.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-semibold text-emerald-600 mb-2">5. Drink More Water</h2>
+          <p class="text-gray-700">
+            Staying hydrated helps control appetite and supports healthy metabolism.
+          </p>
+        </div>
+
+      </div>
+
+      <p class="text-gray-700 mt-6">
+        <strong>Tip:</strong> Recheck your progress regularly using our BMI Calculator.
+      </p>
+
+      <a href="../bmi.html" class="text-emerald-600 font-medium hover:underline inline-block mt-10">
+        ← Back to BMI Calculator
+      </a>
+
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t py-8 text-center text-sm text-gray-500">
+    © 2025 HealthTracker. All rights reserved.
+  </footer>
+
+  <!-- Sidebar Script -->
+  <script>
+    fetch("../sidebar.html")
+      .then(res=>res.text())
+      .then(html=>{
+        document.getElementById("sidebar-container").innerHTML = html;
+        const sidebar = document.getElementById("sidebar-menu");
+        const closeMenu = document.getElementById("close-menu");
+        document.getElementById("menu-btn").onclick = () => sidebar.style.right="0px";
+        closeMenu.onclick = () => sidebar.style.right="-260px";
+      });
+  </script>
+
 </body>
 </html>
