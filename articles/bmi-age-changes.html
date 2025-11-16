@@ -5,30 +5,109 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Why BMI Changes With Age | HealthTracker</title>
   <meta name="description" content="Learn how BMI naturally changes as you age and what it means for your health." />
-  <link rel="stylesheet" href="../article-style.css">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+  <!-- TailwindCSS + Fonts -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style> body { font-family: 'Inter', sans-serif; } </style>
 </head>
 
-<body>
-  <article class="article-container">
-    <h1>Why BMI Changes With Age</h1>
+<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
 
-    <p>BMI is influenced not only by height and weight but also by natural aging processes.</p>
+  <!-- Hamburger Button -->
+  <button id="menu-btn"
+    class="fixed top-4 right-4 bg-white border rounded-lg p-2 shadow z-50">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+         viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16" />
+    </svg>
+  </button>
 
-    <h2>1. Muscle Loss (Sarcopenia)</h2>
-    <p>As you age, muscle mass decreases, which can raise body fat percentage even if BMI stays constant.</p>
+  <!-- Sidebar -->
+  <div id="sidebar-container"></div>
 
-    <h2>2. Metabolism Slows Down</h2>
-    <p>Older adults burn fewer calories at rest, making weight gain easier.</p>
+  <!-- Header -->
+  <header class="bg-white/90 backdrop-blur border-b sticky top-0 z-40 shadow-sm">
+    <div class="max-w-6xl mx-auto flex justify-between items-center px-4 py-3">
+      <a href="../index.html" class="flex items-center space-x-2">
+        <img src="../assets/logo.svg" class="h-8 w-8">
+        <span class="text-xl font-semibold text-emerald-600">HealthTracker</span>
+      </a>
+    </div>
+  </header>
 
-    <h2>3. Hormonal Changes</h2>
-    <p>Shifts in hormones affect appetite, fat storage, and energy levels.</p>
+  <!-- Main Content -->
+  <main class="flex-grow">
+    <section class="max-w-4xl mx-auto px-6 py-12">
 
-    <h2>4. Bone Density Reduces</h2>
-    <p>Lower bone mass can slightly reduce weight, affecting BMI calculations.</p>
+      <h1 class="text-4xl font-semibold text-emerald-600 mb-6">Why BMI Changes With Age</h1>
 
-    <p><strong>Important:</strong> BMI is less accurate for older adults—use it as a guide, not a diagnosis.</p>
+      <p class="text-gray-600 leading-relaxed mb-6">
+        BMI doesn’t stay the same throughout life. As the body ages, natural physical changes can affect how BMI is interpreted.
+      </p>
 
-    <a href="../bmi.html" class="back-link">← Back to BMI Calculator</a>
-  </article>
+      <div class="bg-white p-6 rounded-xl shadow space-y-6">
+
+        <div>
+          <h2 class="text-xl font-semibold text-emerald-600 mb-2">1. Muscle Loss (Sarcopenia)</h2>
+          <p class="text-gray-700">
+            As you age, muscle mass gradually declines. This raises body fat percentage even if your weight or BMI remains the same.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-semibold text-emerald-600 mb-2">2. Slower Metabolism</h2>
+          <p class="text-gray-700">
+            Older adults burn fewer calories at rest, making weight gain more likely even with similar eating habits.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-semibold text-emerald-600 mb-2">3. Hormonal Changes</h2>
+          <p class="text-gray-700">
+            Changes in hormones such as estrogen, testosterone, and growth hormone influence appetite, energy levels, and fat storage.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-semibold text-emerald-600 mb-2">4. Reduced Bone Density</h2>
+          <p class="text-gray-700">
+            Bone mass decreases with age, which can slightly lower body weight and affect the accuracy of BMI calculations.
+          </p>
+        </div>
+
+      </div>
+
+      <p class="text-gray-700 mt-6">
+        <strong>Important:</strong> BMI becomes less accurate for older adults. Use it only as a general guideline—not a diagnosis.
+      </p>
+
+      <a href="../bmi.html" class="text-emerald-600 font-medium hover:underline inline-block mt-10">
+        ← Back to BMI Calculator
+      </a>
+
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t py-8 text-center text-sm text-gray-500">
+    © 2025 HealthTracker. All rights reserved.
+  </footer>
+
+  <!-- Sidebar Script -->
+  <script>
+    fetch("../sidebar.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("sidebar-container").innerHTML = html;
+        const sidebar = document.getElementById("sidebar-menu");
+        const closeMenu = document.getElementById("close-menu");
+        document.getElementById("menu-btn").onclick = () => sidebar.style.right="0px";
+        closeMenu.onclick = () => sidebar.style.right="-260px";
+      });
+  </script>
+
 </body>
 </html>
