@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Common Signs of Dehydration | Hydration Guide</title>
+
+  <meta name="description" content="Recognize the early signs of dehydration and understand why proper hydration is essential for your health." />
+  <meta name="keywords" content="dehydration signs, hydration, water intake, dehydration symptoms" />
+
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>body { font-family: 'Inter', sans-serif; }</style>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-white/90 backdrop-blur border-b sticky top-0 z-40 shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="../index.html" class="flex items-center space-x-2">
+        <img src="../assets/logo.svg" class="h-8 w-8">
+        <span class="text-xl font-semibold text-emerald-600">HealthTracker</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Content -->
+  <main class="max-w-4xl mx-auto px-6 py-12">
+    <h1 class="text-3xl font-bold text-emerald-600 mb-4">Common Signs of Dehydration</h1>
+
+    <p class="text-gray-700 mb-4 leading-relaxed">
+      Dehydration happens when your body loses more fluid than it takes in. Recognizing early warning signs can help prevent fatigue, headaches, and health issues.
+    </p>
+
+    <h2 class="text-xl font-semibold text-emerald-600 mt-8 mb-2">Early Symptoms</h2>
+    <ul class="list-disc ml-6 text-gray-700 space-y-2">
+      <li>Dry mouth or cracked lips</li>
+      <li>Dark yellow urine</li>
+      <li>Low energy or fatigue</li>
+      <li>Dizziness or lightheadedness</li>
+      <li>Increased thirst</li>
+    </ul>
+
+    <h2 class="text-xl font-semibold text-emerald-600 mt-8 mb-2">Advanced Signs</h2>
+    <ul class="list-disc ml-6 text-gray-700 space-y-2">
+      <li>Rapid heartbeat</li>
+      <li>Confusion or irritability</li>
+      <li>Very dry skin</li>
+      <li>No urine for over 8 hours</li>
+    </ul>
+
+    <p class="mt-6 text-gray-700">
+      Use our  
+      <a href="../hydration.html" class="text-emerald-600 font-medium hover:underline">
+        Hydration Calculator
+      </a>  
+      to estimate how much water your body needs.
+    </p>
+
+    <p class="text-sm text-gray-500 mt-6">*Seek medical attention if symptoms worsen or persist.</p>
+  </main>
+
+  <footer class="bg-white border-t py-8 text-center text-sm text-gray-500">
+    <p>© 2025 <strong>HealthTracker</strong>. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
