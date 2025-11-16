@@ -1,11 +1,13 @@
 <!-- ========== SIDEBAR MENU (HealthTracker) ========== -->
 <div id="sidebar-menu"
-  class="fixed top-0 right-[-260px] w-64 h-full bg-white shadow-xl border-l border-gray-200 z-[9998] transition-all duration-300">
+  class="fixed top-0 right-[-260px] w-64 h-full bg-white shadow-xl border-l border-gray-200 
+         z-[9998] transition-all duration-300">
 
   <!-- Header -->
   <div class="p-4 border-b flex justify-between items-center">
     <h2 class="text-lg font-semibold text-emerald-600">Menu</h2>
-    <button id="close-menu" class="text-gray-500 hover:text-red-500 text-xl leading-none">✕</button>
+    <button id="close-menu" aria-label="Close menu"
+      class="text-gray-500 hover:text-red-500 text-xl leading-none">✕</button>
   </div>
 
   <!-- Navigation -->
@@ -20,21 +22,33 @@
   </nav>
 </div>
 
+
 <!-- ========== COOKIE CONSENT BANNER (Appears once only) ========== -->
 <div id="cookie-banner"
-  class="fixed bottom-4 right-4 max-w-sm bg-white shadow-xl border border-gray-200 rounded-xl p-4 
-         z-[9999] hidden">
+  class="fixed bottom-4 right-4 w-[90%] max-w-sm bg-white shadow-xl border border-gray-200 
+         rounded-xl p-4 z-[9999] hidden animate-fadeIn">
 
   <p class="text-sm text-gray-700 mb-3 leading-relaxed">
     We use a minimal cookie only to remember that you closed this message.  
-    No tracking, no analytics, no ads.
+    <strong>No tracking, no analytics, no ads.</strong>
   </p>
 
   <button id="accept-cookie"
-    class="w-full bg-emerald-500 text-white text-sm font-semibold py-2 rounded-lg hover:bg-emerald-600 transition">
+    class="w-full bg-emerald-500 text-white text-sm font-semibold py-2 rounded-lg 
+           hover:bg-emerald-600 transition">
     OK, Got it
   </button>
 </div>
+
+<!-- Fade-in animation -->
+<style>
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fadeIn { animation: fadeIn .35s ease-out; }
+</style>
+
 
 <script>
   // Show cookie banner once
@@ -42,7 +56,7 @@
     document.getElementById("cookie-banner").classList.remove("hidden");
   }
 
-  // Hide + save user choice
+  // Accept + save preference
   document.getElementById("accept-cookie").onclick = () => {
     localStorage.setItem("cookieAccepted", "yes");
     document.getElementById("cookie-banner").classList.add("hidden");
