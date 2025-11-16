@@ -29,7 +29,7 @@
 
   <!-- ========== HAMBURGER BUTTON ========== -->
   <button id="menu-btn"
-    class="fixed top-4 right-4 bg-white border rounded-lg p-2 shadow hover:bg-gray-100 transition z-50">
+    class="fixed top-4 left-4 bg-white border rounded-lg p-2 shadow hover:bg-gray-100 transition z-50">
     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="none"
       viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -42,7 +42,7 @@
 
   <!-- ========== HEADER ========== -->
   <header class="bg-white/90 backdrop-blur border-b sticky top-0 z-40 shadow-sm">
-<div class="max-w-6xl mx-auto flex justify-between items-center px-4 py-3 md:py-4 pr-14">
+    <div class="max-w-6xl mx-auto flex justify-between items-center px-4 py-3 md:py-4">
       <a href="index.html" class="flex items-center space-x-2">
         <img src="assets/logo.svg" alt="HealthTracker Logo" class="h-8 w-8">
         <span class="text-xl font-semibold text-emerald-600 hover:text-emerald-700">HealthTracker</span>
@@ -62,7 +62,7 @@
     <section class="max-w-5xl mx-auto px-6 py-12 md:py-20 text-center">
       <h1 class="text-4xl font-semibold text-emerald-600 mb-3">Hydration Calculator</h1>
       <p class="text-gray-600 text-lg mb-10 max-w-2xl mx-auto">
-        Find out how much water you should drink each day based on your weight, activity level, and climate.  
+        Find out how much water you should drink each day for your body weight, activity level, and climate.  
         Simple, accurate, and 100% private.
       </p>
 
@@ -73,14 +73,12 @@
         <div class="grid md:grid-cols-2 gap-6">
           <div>
             <label for="weight" class="block text-sm font-medium text-gray-700">Weight (kg)</label>
-            <input id="weight" type="number" min="30" max="200" placeholder="e.g. 70"
-              class="w-full mt-1 p-2 border rounded-lg focus:ring-2 focus:ring-emerald-400">
+            <input id="weight" type="number" min="30" max="200" placeholder="e.g. 70" class="w-full mt-1 p-2 border rounded-lg focus:ring-2 focus:ring-emerald-400">
           </div>
 
           <div>
             <label for="activity" class="block text-sm font-medium text-gray-700">Activity Level</label>
-            <select id="activity"
-              class="w-full mt-1 p-2 border rounded-lg focus:ring-2 focus:ring-emerald-400">
+            <select id="activity" class="w-full mt-1 p-2 border rounded-lg focus:ring-2 focus:ring-emerald-400">
               <option value="1.0">Low (Sedentary)</option>
               <option value="1.2">Moderate (Some Activity)</option>
               <option value="1.4">High (Active Lifestyle)</option>
@@ -89,8 +87,7 @@
 
           <div>
             <label for="climate" class="block text-sm font-medium text-gray-700">Climate</label>
-            <select id="climate"
-              class="w-full mt-1 p-2 border rounded-lg focus:ring-2 focus:ring-emerald-400">
+            <select id="climate" class="w-full mt-1 p-2 border rounded-lg focus:ring-2 focus:ring-emerald-400">
               <option value="1.0">Cool</option>
               <option value="1.2">Moderate</option>
               <option value="1.4">Hot</option>
@@ -98,8 +95,7 @@
           </div>
         </div>
 
-        <button id="calculate"
-          class="w-full mt-6 bg-emerald-500 text-white font-semibold py-2 rounded-lg hover:bg-emerald-600 transition">
+        <button id="calculate" class="w-full mt-6 bg-emerald-500 text-white font-semibold py-2 rounded-lg hover:bg-emerald-600 transition">
           Calculate Water Intake
         </button>
 
@@ -108,7 +104,7 @@
           <p class="text-sm text-gray-500">Your recommended daily intake is</p>
           <p id="water-value" class="text-4xl font-bold text-emerald-600 my-2">—</p>
           <p class="text-gray-700 font-medium">liters per day</p>
-          <p class="text-xs text-gray-500 mt-2">Based on your weight, activity, and climate.</p>
+          <p class="text-xs text-gray-500 mt-2">Based on your weight, activity, and climate level.</p>
         </div>
 
         <p class="text-xs text-gray-400 mt-6">
@@ -118,15 +114,25 @@
     </section>
   </main>
 
-  <!-- ========== FOOTER ========== -->
-  <footer class="bg-white border-t py-6 text-center text-sm text-gray-500">
-    <p>© 2025 HealthTracker. All rights reserved.</p>
-    <p class="mt-1 text-xs text-gray-400">
-      Stay hydrated, stay healthy — simple tools, private by design.
-    </p>
+  <!-- ========== UPDATED FOOTER (Same on all pages) ========== -->
+  <footer class="bg-white border-t border-gray-100 mt-10 py-8 text-center text-sm text-gray-500">
+    <div class="max-w-6xl mx-auto px-4 space-y-4">
+
+      <nav class="flex justify-center flex-wrap gap-4 text-gray-600 font-medium">
+        <a href="about.html" class="hover:text-emerald-600 transition">About Us</a>
+        <a href="sitemap.html" class="hover:text-emerald-600 transition">Sitemap</a>
+        <a href="disclaimer.html" class="hover:text-emerald-600 transition">Terms of Use</a>
+        <a href="privacy.html" class="hover:text-emerald-600 transition">Privacy Policy</a>
+      </nav>
+
+      <div class="border-t border-gray-200 w-24 mx-auto"></div>
+
+      <p>© 2025 <strong>HealthTracker</strong>. All rights reserved.</p>
+      <p class="text-xs text-gray-400">Stay hydrated, stay healthy — simple and private.</p>
+    </div>
   </footer>
 
-  <!-- ========== SCRIPT (Hydration Logic) ========== -->
+  <!-- ========== SCRIPT (Calculator) ========== -->
   <script>
     const weightInput = document.getElementById('weight');
     const activityInput = document.getElementById('activity');
@@ -153,7 +159,7 @@
     });
   </script>
 
-  <!-- ========== SIDEBAR LOADER SCRIPT ========== -->
+  <!-- ========== SIDEBAR LOADER ========== -->
   <script>
     fetch("sidebar.html")
       .then(res => res.text())
