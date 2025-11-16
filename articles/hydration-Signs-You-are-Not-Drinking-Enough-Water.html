@@ -5,34 +5,111 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Signs You're Not Drinking Enough Water | HealthTracker</title>
   <meta name="description" content="Learn the most common signs of dehydration so you can take action and stay healthy." />
-  <link rel="stylesheet" href="../article-style.css">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+  <!-- TailwindCSS + Inter Font -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>body{font-family:'Inter',sans-serif}</style>
 </head>
 
-<body>
-  <article class="article-container">
+<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
 
-    <h1>Signs You're Not Drinking Enough Water</h1>
+  <!-- Menu Button -->
+  <button id="menu-btn"
+    class="fixed top-4 right-4 bg-white border rounded-lg p-2 shadow z-50">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+        viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16" />
+    </svg>
+  </button>
 
-    <p>Dehydration can affect your body more quickly than you might think. Here are the most common symptoms that signal you need more water.</p>
+  <!-- Sidebar -->
+  <div id="sidebar-container"></div>
 
-    <h2>1. Dark Yellow Urine</h2>
-    <p>Light straw-colored urine is ideal. Darker shades indicate dehydration.</p>
+  <!-- Header -->
+  <header class="bg-white/90 backdrop-blur border-b sticky top-0 z-40 shadow-sm">
+    <div class="max-w-6xl mx-auto flex justify-between items-center px-4 py-3">
+      <a href="../index.html" class="flex items-center space-x-2">
+        <img src="../assets/logo.svg" class="h-8 w-8">
+        <span class="text-xl font-semibold text-emerald-600">HealthTracker</span>
+      </a>
+    </div>
+  </header>
 
-    <h2>2. Persistent Headaches</h2>
-    <p>Even mild dehydration can trigger headaches or difficulty concentrating.</p>
+  <!-- Main -->
+  <main class="flex-grow">
+    <section class="max-w-4xl mx-auto px-6 py-12">
 
-    <h2>3. Dry Mouth or Bad Breath</h2>
-    <p>Lack of saliva causes bacterial growth, leading to dryness and odor.</p>
+      <h1 class="text-4xl font-semibold text-emerald-600 mb-6">
+        Signs You're Not Drinking Enough Water
+      </h1>
 
-    <h2>4. Fatigue and Low Energy</h2>
-    <p>Water is essential for circulation and oxygen flow. Lower intake = more fatigue.</p>
+      <p class="text-gray-600 leading-relaxed mb-6">
+        Dehydration affects your body faster than most people realize. These are the most common signs that you may not be drinking enough water.
+      </p>
 
-    <h2>5. Dizziness or Lightheadedness</h2>
-    <p>Dehydration can temporarily reduce blood pressure, causing dizziness.</p>
+      <div class="bg-white p-6 rounded-xl shadow space-y-6">
 
-    <p><strong>Tip:</strong> Use the Hydration Calculator to know exactly how much water your body needs.</p>
+        <div>
+          <h2 class="text-xl font-semibold text-emerald-600 mb-2">1. Dark Yellow Urine</h2>
+          <p class="text-gray-700">Healthy urine should be pale and straw-colored. Darker shades are a clear signal of dehydration.</p>
+        </div>
 
-    <a href="../hydration.html" class="back-link">← Back to Hydration Calculator</a>
-  </article>
+        <div>
+          <h2 class="text-xl font-semibold text-emerald-600 mb-2">2. Persistent Headaches</h2>
+          <p class="text-gray-700">Even mild dehydration can trigger headaches and difficulty concentrating.</p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-semibold text-emerald-600 mb-2">3. Dry Mouth & Bad Breath</h2>
+          <p class="text-gray-700">Low saliva production allows bacteria to grow, causing dryness and unpleasant breath.</p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-semibold text-emerald-600 mb-2">4. Fatigue & Low Energy</h2>
+          <p class="text-gray-700">Water is essential for energy production and circulation. Low intake leads to tiredness.</p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-semibold text-emerald-600 mb-2">5. Dizziness or Lightheadedness</h2>
+          <p class="text-gray-700">Dehydration can temporarily reduce blood pressure, which may cause dizziness.</p>
+        </div>
+
+      </div>
+
+      <p class="text-gray-700 mt-6">
+        <strong>Tip:</strong> Use our Hydration Calculator to know exactly how much water your body needs daily.
+      </p>
+
+      <a href="../hydration.html" class="text-emerald-600 font-medium hover:underline inline-block mt-10">
+        ← Back to Hydration Calculator
+      </a>
+
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t py-8 text-center text-sm text-gray-500">
+    © 2025 HealthTracker. All rights reserved.
+  </footer>
+
+  <!-- Sidebar Loader -->
+  <script>
+    fetch("../sidebar.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("sidebar-container").innerHTML = html;
+        const sidebar = document.getElementById("sidebar-menu");
+        const closeMenu = document.getElementById("close-menu");
+
+        document.getElementById("menu-btn").onclick =
+          () => sidebar.style.right = "0px";
+        closeMenu.onclick =
+          () => sidebar.style.right = "-260px";
+      });
+  </script>
+
 </body>
 </html>
